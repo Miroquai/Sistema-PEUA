@@ -1,0 +1,83 @@
+﻿@model PEUA.Models.Persona
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_Materno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_Materno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_Paterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_Paterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contacto.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleador.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleador.Cargo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

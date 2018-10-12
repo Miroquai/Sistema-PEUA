@@ -1,0 +1,88 @@
+﻿@model IEnumerable<PEUA.Models.Convenio>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_Decreto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_expiracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Periocidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Carrera.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contacto.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Organizacion.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Documento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_Decreto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_expiracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Periocidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carrera.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contacto.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Organizacion.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

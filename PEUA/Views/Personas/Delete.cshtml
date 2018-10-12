@@ -1,0 +1,89 @@
+﻿@model PEUA.Models.Persona
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_Materno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_Materno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido_Paterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido_Paterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contacto.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleador.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleador.Cargo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

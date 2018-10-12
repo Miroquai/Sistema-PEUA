@@ -1,0 +1,1106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModeloPEUA.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloPEUAStoreContainer">
+    <EntitySet Name="Actividad" EntityType="ModeloPEUA.Store.Actividad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Carrera" EntityType="ModeloPEUA.Store.Carrera" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contacto" EntityType="ModeloPEUA.Store.Contacto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Convenio" EntityType="ModeloPEUA.Store.Convenio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Empleador" EntityType="ModeloPEUA.Store.Empleador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Encuesta" EntityType="ModeloPEUA.Store.Encuesta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Facultad" EntityType="ModeloPEUA.Store.Facultad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Organizacion" EntityType="ModeloPEUA.Store.Organizacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Persona" EntityType="ModeloPEUA.Store.Persona" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pregunta" EntityType="ModeloPEUA.Store.Pregunta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Respuesta" EntityType="ModeloPEUA.Store.Respuesta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActividadEmpleador" EntityType="ModeloPEUA.Store.ActividadEmpleador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ActividadOrganizacion" EntityType="ModeloPEUA.Store.ActividadOrganizacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarreraActividad" EntityType="ModeloPEUA.Store.CarreraActividad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarreraEmpleador" EntityType="ModeloPEUA.Store.CarreraEmpleador" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpleadorEncuesta" EntityType="ModeloPEUA.Store.EmpleadorEncuesta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EncuestaPregunta" EntityType="ModeloPEUA.Store.EncuestaPregunta" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CarreraConvenio" Association="ModeloPEUA.Store.FK_CarreraConvenio">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="Convenio" EntitySet="Convenio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraFacultad" Association="ModeloPEUA.Store.FK_CarreraFacultad">
+      <End Role="Facultad" EntitySet="Facultad" />
+      <End Role="Carrera" EntitySet="Carrera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacto_inherits_Persona" Association="ModeloPEUA.Store.FK_Contacto_inherits_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Contacto" EntitySet="Contacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactoConvenio" Association="ModeloPEUA.Store.FK_ContactoConvenio">
+      <End Role="Contacto" EntitySet="Contacto" />
+      <End Role="Convenio" EntitySet="Convenio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConvenioFacultad" Association="ModeloPEUA.Store.FK_ConvenioFacultad">
+      <End Role="Convenio" EntitySet="Convenio" />
+      <End Role="Facultad" EntitySet="Facultad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConvenioOrganizacion" Association="ModeloPEUA.Store.FK_ConvenioOrganizacion">
+      <End Role="Organizacion" EntitySet="Organizacion" />
+      <End Role="Convenio" EntitySet="Convenio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleador_inherits_Persona" Association="ModeloPEUA.Store.FK_Empleador_inherits_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Empleador" EntitySet="Empleador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpleadorOrganizacion" Association="ModeloPEUA.Store.FK_EmpleadorOrganizacion">
+      <End Role="Organizacion" EntitySet="Organizacion" />
+      <End Role="Empleador" EntitySet="Empleador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActividadEmpleador_Actividad" Association="ModeloPEUA.Store.FK_ActividadEmpleador_Actividad">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="ActividadEmpleador" EntitySet="ActividadEmpleador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActividadEmpleador_Empleador" Association="ModeloPEUA.Store.FK_ActividadEmpleador_Empleador">
+      <End Role="Empleador" EntitySet="Empleador" />
+      <End Role="ActividadEmpleador" EntitySet="ActividadEmpleador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActividadOrganizacion_Actividad" Association="ModeloPEUA.Store.FK_ActividadOrganizacion_Actividad">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="ActividadOrganizacion" EntitySet="ActividadOrganizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActividadOrganizacion_Organizacion" Association="ModeloPEUA.Store.FK_ActividadOrganizacion_Organizacion">
+      <End Role="Organizacion" EntitySet="Organizacion" />
+      <End Role="ActividadOrganizacion" EntitySet="ActividadOrganizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraActividad_Actividad" Association="ModeloPEUA.Store.FK_CarreraActividad_Actividad">
+      <End Role="Actividad" EntitySet="Actividad" />
+      <End Role="CarreraActividad" EntitySet="CarreraActividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraActividad_Carrera" Association="ModeloPEUA.Store.FK_CarreraActividad_Carrera">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="CarreraActividad" EntitySet="CarreraActividad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraEmpleador_Carrera" Association="ModeloPEUA.Store.FK_CarreraEmpleador_Carrera">
+      <End Role="Carrera" EntitySet="Carrera" />
+      <End Role="CarreraEmpleador" EntitySet="CarreraEmpleador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CarreraEmpleador_Empleador" Association="ModeloPEUA.Store.FK_CarreraEmpleador_Empleador">
+      <End Role="Empleador" EntitySet="Empleador" />
+      <End Role="CarreraEmpleador" EntitySet="CarreraEmpleador" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpleadorEncuesta_Empleador" Association="ModeloPEUA.Store.FK_EmpleadorEncuesta_Empleador">
+      <End Role="Empleador" EntitySet="Empleador" />
+      <End Role="EmpleadorEncuesta" EntitySet="EmpleadorEncuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmpleadorEncuesta_Encuesta" Association="ModeloPEUA.Store.FK_EmpleadorEncuesta_Encuesta">
+      <End Role="Encuesta" EntitySet="Encuesta" />
+      <End Role="EmpleadorEncuesta" EntitySet="EmpleadorEncuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EncuestaPregunta_Encuesta" Association="ModeloPEUA.Store.FK_EncuestaPregunta_Encuesta">
+      <End Role="Encuesta" EntitySet="Encuesta" />
+      <End Role="EncuestaPregunta" EntitySet="EncuestaPregunta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EncuestaPregunta_Pregunta" Association="ModeloPEUA.Store.FK_EncuestaPregunta_Pregunta">
+      <End Role="Pregunta" EntitySet="Pregunta" />
+      <End Role="EncuestaPregunta" EntitySet="EncuestaPregunta" />
+    </AssociationSet>
+    <AssociationSet Name="RespuestaEmpleador" Association="ModeloPEUA.Store.RespuestaEmpleador">
+      <End Role="Respuesta" EntitySet="Respuesta" />
+      <End Role="Empleador" EntitySet="Empleador" />
+    </AssociationSet>
+    <AssociationSet Name="RespuestaPregunta" Association="ModeloPEUA.Store.RespuestaPregunta">
+      <End Role="Respuesta" EntitySet="Respuesta" />
+      <End Role="Pregunta" EntitySet="Pregunta" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Actividad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantidadInscritos" Type="int" Nullable="false" />
+    <Property Name="CantidadParticipante" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Semestre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Año" Type="datetime" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GrupoEnfoque" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Facultad_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Convenio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Documento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Numero_Decreto" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fecha_expiracion" Type="datetime" Nullable="false" />
+    <Property Name="Periocidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contacto_Id" Type="int" Nullable="false" />
+    <Property Name="Organizacion_Id" Type="int" Nullable="true" />
+    <Property Name="Carrera_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Cargo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Area" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Organizacion_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Encuesta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Facultad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Convenio_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Organizacion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ciudad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SectorEconomico" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tamaño" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RangoTitulados" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fono" Type="int" Nullable="false" />
+    <Property Name="Apellido_Materno" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellido_Paterno" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rut" Type="bigint" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Pregunta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Respuesta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Empleador_Id" Type="int" Nullable="false" />
+    <Property Name="Pregunta_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActividadEmpleador">
+    <Key>
+      <PropertyRef Name="Actividad_Id" />
+      <PropertyRef Name="Empleador_Id" />
+    </Key>
+    <Property Name="Actividad_Id" Type="int" Nullable="false" />
+    <Property Name="Empleador_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ActividadOrganizacion">
+    <Key>
+      <PropertyRef Name="Actividad_Id" />
+      <PropertyRef Name="Organizacion_Id" />
+    </Key>
+    <Property Name="Actividad_Id" Type="int" Nullable="false" />
+    <Property Name="Organizacion_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CarreraActividad">
+    <Key>
+      <PropertyRef Name="Actividad_Id" />
+      <PropertyRef Name="Carrera_Id" />
+    </Key>
+    <Property Name="Actividad_Id" Type="int" Nullable="false" />
+    <Property Name="Carrera_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CarreraEmpleador">
+    <Key>
+      <PropertyRef Name="Carrera_Id" />
+      <PropertyRef Name="Empleador_Id" />
+    </Key>
+    <Property Name="Carrera_Id" Type="int" Nullable="false" />
+    <Property Name="Empleador_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpleadorEncuesta">
+    <Key>
+      <PropertyRef Name="Empleador_Id" />
+      <PropertyRef Name="Encuesta_Id" />
+    </Key>
+    <Property Name="Empleador_Id" Type="int" Nullable="false" />
+    <Property Name="Encuesta_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EncuestaPregunta">
+    <Key>
+      <PropertyRef Name="Encuesta_Id" />
+      <PropertyRef Name="Pregunta_Id" />
+    </Key>
+    <Property Name="Encuesta_Id" Type="int" Nullable="false" />
+    <Property Name="Pregunta_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CarreraConvenio">
+    <End Role="Carrera" Type="ModeloPEUA.Store.Carrera" Multiplicity="1" />
+    <End Role="Convenio" Type="ModeloPEUA.Store.Convenio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Convenio">
+        <PropertyRef Name="Carrera_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraFacultad">
+    <End Role="Facultad" Type="ModeloPEUA.Store.Facultad" Multiplicity="1" />
+    <End Role="Carrera" Type="ModeloPEUA.Store.Carrera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facultad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Carrera">
+        <PropertyRef Name="Facultad_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacto_inherits_Persona">
+    <End Role="Persona" Type="ModeloPEUA.Store.Persona" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contacto" Type="ModeloPEUA.Store.Contacto" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contacto">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactoConvenio">
+    <End Role="Contacto" Type="ModeloPEUA.Store.Contacto" Multiplicity="1" />
+    <End Role="Convenio" Type="ModeloPEUA.Store.Convenio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contacto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Convenio">
+        <PropertyRef Name="Contacto_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConvenioFacultad">
+    <End Role="Convenio" Type="ModeloPEUA.Store.Convenio" Multiplicity="1" />
+    <End Role="Facultad" Type="ModeloPEUA.Store.Facultad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Convenio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Facultad">
+        <PropertyRef Name="Convenio_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConvenioOrganizacion">
+    <End Role="Organizacion" Type="ModeloPEUA.Store.Organizacion" Multiplicity="0..1" />
+    <End Role="Convenio" Type="ModeloPEUA.Store.Convenio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizacion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Convenio">
+        <PropertyRef Name="Organizacion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleador_inherits_Persona">
+    <End Role="Persona" Type="ModeloPEUA.Store.Persona" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleador" Type="ModeloPEUA.Store.Empleador" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleador">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpleadorOrganizacion">
+    <End Role="Organizacion" Type="ModeloPEUA.Store.Organizacion" Multiplicity="0..1" />
+    <End Role="Empleador" Type="ModeloPEUA.Store.Empleador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizacion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleador">
+        <PropertyRef Name="Organizacion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RespuestaEmpleador">
+    <End Role="Respuesta" Type="ModeloPEUA.Store.Respuesta" Multiplicity="*" />
+    <End Role="Empleador" Type="ModeloPEUA.Store.Empleador" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Respuesta">
+        <PropertyRef Name="Empleador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RespuestaPregunta">
+    <End Role="Respuesta" Type="ModeloPEUA.Store.Respuesta" Multiplicity="*" />
+    <End Role="Pregunta" Type="ModeloPEUA.Store.Pregunta" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Pregunta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Respuesta">
+        <PropertyRef Name="Pregunta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActividadEmpleador_Actividad">
+    <End Role="Actividad" Type="ModeloPEUA.Store.Actividad" Multiplicity="1" />
+    <End Role="ActividadEmpleador" Type="ModeloPEUA.Store.ActividadEmpleador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActividadEmpleador">
+        <PropertyRef Name="Actividad_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActividadEmpleador_Empleador">
+    <End Role="ActividadEmpleador" Type="ModeloPEUA.Store.ActividadEmpleador" Multiplicity="*" />
+    <End Role="Empleador" Type="ModeloPEUA.Store.Empleador" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActividadEmpleador">
+        <PropertyRef Name="Empleador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActividadOrganizacion_Actividad">
+    <End Role="Actividad" Type="ModeloPEUA.Store.Actividad" Multiplicity="1" />
+    <End Role="ActividadOrganizacion" Type="ModeloPEUA.Store.ActividadOrganizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActividadOrganizacion">
+        <PropertyRef Name="Actividad_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActividadOrganizacion_Organizacion">
+    <End Role="ActividadOrganizacion" Type="ModeloPEUA.Store.ActividadOrganizacion" Multiplicity="*" />
+    <End Role="Organizacion" Type="ModeloPEUA.Store.Organizacion" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Organizacion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ActividadOrganizacion">
+        <PropertyRef Name="Organizacion_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraActividad_Actividad">
+    <End Role="Actividad" Type="ModeloPEUA.Store.Actividad" Multiplicity="1" />
+    <End Role="CarreraActividad" Type="ModeloPEUA.Store.CarreraActividad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actividad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CarreraActividad">
+        <PropertyRef Name="Actividad_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraActividad_Carrera">
+    <End Role="CarreraActividad" Type="ModeloPEUA.Store.CarreraActividad" Multiplicity="*" />
+    <End Role="Carrera" Type="ModeloPEUA.Store.Carrera" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CarreraActividad">
+        <PropertyRef Name="Carrera_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraEmpleador_Carrera">
+    <End Role="Carrera" Type="ModeloPEUA.Store.Carrera" Multiplicity="1" />
+    <End Role="CarreraEmpleador" Type="ModeloPEUA.Store.CarreraEmpleador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrera">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CarreraEmpleador">
+        <PropertyRef Name="Carrera_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CarreraEmpleador_Empleador">
+    <End Role="CarreraEmpleador" Type="ModeloPEUA.Store.CarreraEmpleador" Multiplicity="*" />
+    <End Role="Empleador" Type="ModeloPEUA.Store.Empleador" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Empleador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CarreraEmpleador">
+        <PropertyRef Name="Empleador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpleadorEncuesta_Empleador">
+    <End Role="Empleador" Type="ModeloPEUA.Store.Empleador" Multiplicity="1" />
+    <End Role="EmpleadorEncuesta" Type="ModeloPEUA.Store.EmpleadorEncuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpleadorEncuesta">
+        <PropertyRef Name="Empleador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmpleadorEncuesta_Encuesta">
+    <End Role="EmpleadorEncuesta" Type="ModeloPEUA.Store.EmpleadorEncuesta" Multiplicity="*" />
+    <End Role="Encuesta" Type="ModeloPEUA.Store.Encuesta" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Encuesta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmpleadorEncuesta">
+        <PropertyRef Name="Encuesta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EncuestaPregunta_Encuesta">
+    <End Role="Encuesta" Type="ModeloPEUA.Store.Encuesta" Multiplicity="1" />
+    <End Role="EncuestaPregunta" Type="ModeloPEUA.Store.EncuestaPregunta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encuesta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EncuestaPregunta">
+        <PropertyRef Name="Encuesta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EncuestaPregunta_Pregunta">
+    <End Role="EncuestaPregunta" Type="ModeloPEUA.Store.EncuestaPregunta" Multiplicity="*" />
+    <End Role="Pregunta" Type="ModeloPEUA.Store.Pregunta" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Pregunta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EncuestaPregunta">
+        <PropertyRef Name="Pregunta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModeloPEUA" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModeloPEUAContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actividad" EntityType="ModeloPEUA.Actividad" />
+          <EntitySet Name="Carrera" EntityType="ModeloPEUA.Carrera" />
+          <EntitySet Name="Contacto" EntityType="ModeloPEUA.Contacto" />
+          <EntitySet Name="Convenio" EntityType="ModeloPEUA.Convenio" />
+          <EntitySet Name="Empleador" EntityType="ModeloPEUA.Empleador" />
+          <EntitySet Name="Encuesta" EntityType="ModeloPEUA.Encuesta" />
+          <EntitySet Name="Facultad" EntityType="ModeloPEUA.Facultad" />
+          <EntitySet Name="Organizacion" EntityType="ModeloPEUA.Organizacion" />
+          <EntitySet Name="Persona" EntityType="ModeloPEUA.Persona" />
+          <AssociationSet Name="FK_CarreraConvenio" Association="ModeloPEUA.FK_CarreraConvenio">
+            <End Role="Carrera" EntitySet="Carrera" />
+            <End Role="Convenio" EntitySet="Convenio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarreraFacultad" Association="ModeloPEUA.FK_CarreraFacultad">
+            <End Role="Facultad" EntitySet="Facultad" />
+            <End Role="Carrera" EntitySet="Carrera" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacto_inherits_Persona" Association="ModeloPEUA.FK_Contacto_inherits_Persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Contacto" EntitySet="Contacto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactoConvenio" Association="ModeloPEUA.FK_ContactoConvenio">
+            <End Role="Contacto" EntitySet="Contacto" />
+            <End Role="Convenio" EntitySet="Convenio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConvenioFacultad" Association="ModeloPEUA.FK_ConvenioFacultad">
+            <End Role="Convenio" EntitySet="Convenio" />
+            <End Role="Facultad" EntitySet="Facultad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConvenioOrganizacion" Association="ModeloPEUA.FK_ConvenioOrganizacion">
+            <End Role="Organizacion" EntitySet="Organizacion" />
+            <End Role="Convenio" EntitySet="Convenio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleador_inherits_Persona" Association="ModeloPEUA.FK_Empleador_inherits_Persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="Empleador" EntitySet="Empleador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpleadorOrganizacion" Association="ModeloPEUA.FK_EmpleadorOrganizacion">
+            <End Role="Organizacion" EntitySet="Organizacion" />
+            <End Role="Empleador" EntitySet="Empleador" />
+          </AssociationSet>
+          <AssociationSet Name="ActividadEmpleador" Association="ModeloPEUA.ActividadEmpleador">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Empleador" EntitySet="Empleador" />
+          </AssociationSet>
+          <AssociationSet Name="ActividadOrganizacion" Association="ModeloPEUA.ActividadOrganizacion">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Organizacion" EntitySet="Organizacion" />
+          </AssociationSet>
+          <AssociationSet Name="CarreraActividad" Association="ModeloPEUA.CarreraActividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="Carrera" EntitySet="Carrera" />
+          </AssociationSet>
+          <AssociationSet Name="CarreraEmpleador" Association="ModeloPEUA.CarreraEmpleador">
+            <End Role="Carrera" EntitySet="Carrera" />
+            <End Role="Empleador" EntitySet="Empleador" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadorEncuesta" Association="ModeloPEUA.EmpleadorEncuesta">
+            <End Role="Empleador" EntitySet="Empleador" />
+            <End Role="Encuesta" EntitySet="Encuesta" />
+          </AssociationSet>
+          <EntitySet Name="Pregunta" EntityType="ModeloPEUA.Pregunta" />
+          <AssociationSet Name="EncuestaPregunta" Association="ModeloPEUA.EncuestaPregunta">
+            <End Role="Encuesta" EntitySet="Encuesta" />
+            <End Role="Pregunta" EntitySet="Pregunta" />
+          </AssociationSet>
+          <EntitySet Name="Respuesta" EntityType="ModeloPEUA.Respuesta" />
+          <AssociationSet Name="RespuestaEmpleador" Association="ModeloPEUA.RespuestaEmpleador">
+            <End Role="Respuesta" EntitySet="Respuesta" />
+            <End Role="Empleador" EntitySet="Empleador" />
+          </AssociationSet>
+          <AssociationSet Name="RespuestaPregunta" Association="ModeloPEUA.RespuestaPregunta">
+            <End Role="Respuesta" EntitySet="Respuesta" />
+            <End Role="Pregunta" EntitySet="Pregunta" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CantidadInscritos" Type="Int32" Nullable="false" />
+          <Property Name="CantidadParticipante" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Semestre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Año" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GrupoEnfoque" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Empleador" Relationship="ModeloPEUA.ActividadEmpleador" FromRole="Actividad" ToRole="Empleador" />
+          <NavigationProperty Name="Organizacion" Relationship="ModeloPEUA.ActividadOrganizacion" FromRole="Actividad" ToRole="Organizacion" />
+          <NavigationProperty Name="Carrera" Relationship="ModeloPEUA.CarreraActividad" FromRole="Actividad" ToRole="Carrera" />
+        </EntityType>
+        <EntityType Name="Carrera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Facultad_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Convenio" Relationship="ModeloPEUA.FK_CarreraConvenio" FromRole="Carrera" ToRole="Convenio" />
+          <NavigationProperty Name="Facultad" Relationship="ModeloPEUA.FK_CarreraFacultad" FromRole="Carrera" ToRole="Facultad" />
+          <NavigationProperty Name="Actividad" Relationship="ModeloPEUA.CarreraActividad" FromRole="Carrera" ToRole="Actividad" />
+          <NavigationProperty Name="Empleador" Relationship="ModeloPEUA.CarreraEmpleador" FromRole="Carrera" ToRole="Empleador" />
+        </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Persona" Relationship="ModeloPEUA.FK_Contacto_inherits_Persona" FromRole="Contacto" ToRole="Persona" />
+          <NavigationProperty Name="Convenio" Relationship="ModeloPEUA.FK_ContactoConvenio" FromRole="Contacto" ToRole="Convenio" />
+        </EntityType>
+        <EntityType Name="Convenio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Documento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Numero_Decreto" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_expiracion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Periocidad" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contacto_Id" Type="Int32" Nullable="false" />
+          <Property Name="Organizacion_Id" Type="Int32" />
+          <Property Name="Carrera_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Carrera" Relationship="ModeloPEUA.FK_CarreraConvenio" FromRole="Convenio" ToRole="Carrera" />
+          <NavigationProperty Name="Contacto" Relationship="ModeloPEUA.FK_ContactoConvenio" FromRole="Convenio" ToRole="Contacto" />
+          <NavigationProperty Name="Facultad" Relationship="ModeloPEUA.FK_ConvenioFacultad" FromRole="Convenio" ToRole="Facultad" />
+          <NavigationProperty Name="Organizacion" Relationship="ModeloPEUA.FK_ConvenioOrganizacion" FromRole="Convenio" ToRole="Organizacion" />
+        </EntityType>
+        <EntityType Name="Empleador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Cargo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Organizacion_Id" Type="Int32" />
+          <NavigationProperty Name="Persona" Relationship="ModeloPEUA.FK_Empleador_inherits_Persona" FromRole="Empleador" ToRole="Persona" />
+          <NavigationProperty Name="Organizacion" Relationship="ModeloPEUA.FK_EmpleadorOrganizacion" FromRole="Empleador" ToRole="Organizacion" />
+          <NavigationProperty Name="Actividad" Relationship="ModeloPEUA.ActividadEmpleador" FromRole="Empleador" ToRole="Actividad" />
+          <NavigationProperty Name="Carrera" Relationship="ModeloPEUA.CarreraEmpleador" FromRole="Empleador" ToRole="Carrera" />
+          <NavigationProperty Name="Encuesta" Relationship="ModeloPEUA.EmpleadorEncuesta" FromRole="Empleador" ToRole="Encuesta" />
+          <NavigationProperty Name="Respuesta" Relationship="ModeloPEUA.RespuestaEmpleador" FromRole="Empleador" ToRole="Respuesta" />
+        </EntityType>
+        <EntityType Name="Encuesta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Empleador" Relationship="ModeloPEUA.EmpleadorEncuesta" FromRole="Encuesta" ToRole="Empleador" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Pregunta" Relationship="ModeloPEUA.EncuestaPregunta" FromRole="Encuesta" ToRole="Pregunta" />
+        </EntityType>
+        <EntityType Name="Facultad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Convenio_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Carrera" Relationship="ModeloPEUA.FK_CarreraFacultad" FromRole="Facultad" ToRole="Carrera" />
+          <NavigationProperty Name="Convenio" Relationship="ModeloPEUA.FK_ConvenioFacultad" FromRole="Facultad" ToRole="Convenio" />
+        </EntityType>
+        <EntityType Name="Organizacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SectorEconomico" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tamaño" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RangoTitulados" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Convenio" Relationship="ModeloPEUA.FK_ConvenioOrganizacion" FromRole="Organizacion" ToRole="Convenio" />
+          <NavigationProperty Name="Empleador" Relationship="ModeloPEUA.FK_EmpleadorOrganizacion" FromRole="Organizacion" ToRole="Empleador" />
+          <NavigationProperty Name="Actividad" Relationship="ModeloPEUA.ActividadOrganizacion" FromRole="Organizacion" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fono" Type="Int32" Nullable="false" />
+          <Property Name="Apellido_Materno" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido_Paterno" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rut" Type="Int64" />
+          <NavigationProperty Name="Contacto" Relationship="ModeloPEUA.FK_Contacto_inherits_Persona" FromRole="Persona" ToRole="Contacto" />
+          <NavigationProperty Name="Empleador" Relationship="ModeloPEUA.FK_Empleador_inherits_Persona" FromRole="Persona" ToRole="Empleador" />
+        </EntityType>
+        <Association Name="FK_CarreraConvenio">
+          <End Type="ModeloPEUA.Carrera" Role="Carrera" Multiplicity="1" />
+          <End Type="ModeloPEUA.Convenio" Role="Convenio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrera">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convenio">
+              <PropertyRef Name="Carrera_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarreraFacultad">
+          <End Type="ModeloPEUA.Facultad" Role="Facultad" Multiplicity="1" />
+          <End Type="ModeloPEUA.Carrera" Role="Carrera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facultad">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Carrera">
+              <PropertyRef Name="Facultad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacto_inherits_Persona">
+          <End Type="ModeloPEUA.Persona" Role="Persona" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ModeloPEUA.Contacto" Role="Contacto" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactoConvenio">
+          <End Type="ModeloPEUA.Contacto" Role="Contacto" Multiplicity="1" />
+          <End Type="ModeloPEUA.Convenio" Role="Convenio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convenio">
+              <PropertyRef Name="Contacto_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConvenioFacultad">
+          <End Type="ModeloPEUA.Convenio" Role="Convenio" Multiplicity="1" />
+          <End Type="ModeloPEUA.Facultad" Role="Facultad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Convenio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Facultad">
+              <PropertyRef Name="Convenio_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConvenioOrganizacion">
+          <End Type="ModeloPEUA.Organizacion" Role="Organizacion" Multiplicity="0..1" />
+          <End Type="ModeloPEUA.Convenio" Role="Convenio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Convenio">
+              <PropertyRef Name="Organizacion_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleador_inherits_Persona">
+          <End Type="ModeloPEUA.Persona" Role="Persona" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ModeloPEUA.Empleador" Role="Empleador" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleador">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpleadorOrganizacion">
+          <End Type="ModeloPEUA.Organizacion" Role="Organizacion" Multiplicity="0..1" />
+          <End Type="ModeloPEUA.Empleador" Role="Empleador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleador">
+              <PropertyRef Name="Organizacion_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ActividadEmpleador">
+          <End Type="ModeloPEUA.Actividad" Role="Actividad" Multiplicity="*" />
+          <End Type="ModeloPEUA.Empleador" Role="Empleador" Multiplicity="*" />
+        </Association>
+        <Association Name="ActividadOrganizacion">
+          <End Type="ModeloPEUA.Actividad" Role="Actividad" Multiplicity="*" />
+          <End Type="ModeloPEUA.Organizacion" Role="Organizacion" Multiplicity="*" />
+        </Association>
+        <Association Name="CarreraActividad">
+          <End Type="ModeloPEUA.Actividad" Role="Actividad" Multiplicity="*" />
+          <End Type="ModeloPEUA.Carrera" Role="Carrera" Multiplicity="*" />
+        </Association>
+        <Association Name="CarreraEmpleador">
+          <End Type="ModeloPEUA.Carrera" Role="Carrera" Multiplicity="*" />
+          <End Type="ModeloPEUA.Empleador" Role="Empleador" Multiplicity="*" />
+        </Association>
+        <Association Name="EmpleadorEncuesta">
+          <End Type="ModeloPEUA.Empleador" Role="Empleador" Multiplicity="*" />
+          <End Type="ModeloPEUA.Encuesta" Role="Encuesta" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Pregunta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Encuesta" Relationship="ModeloPEUA.EncuestaPregunta" FromRole="Pregunta" ToRole="Encuesta" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Respuesta" Relationship="ModeloPEUA.RespuestaPregunta" FromRole="Pregunta" ToRole="Respuesta" />
+        </EntityType>
+        <Association Name="EncuestaPregunta">
+          <End Type="ModeloPEUA.Encuesta" Role="Encuesta" Multiplicity="*" />
+          <End Type="ModeloPEUA.Pregunta" Role="Pregunta" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Respuesta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Texto" Type="String" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Empleador" Relationship="ModeloPEUA.RespuestaEmpleador" FromRole="Respuesta" ToRole="Empleador" />
+          <NavigationProperty Name="Pregunta" Relationship="ModeloPEUA.RespuestaPregunta" FromRole="Respuesta" ToRole="Pregunta" />
+        </EntityType>
+        <Association Name="RespuestaEmpleador">
+          <End Type="ModeloPEUA.Respuesta" Role="Respuesta" Multiplicity="*" />
+          <End Type="ModeloPEUA.Empleador" Role="Empleador" Multiplicity="1" />
+        </Association>
+        <Association Name="RespuestaPregunta">
+          <End Type="ModeloPEUA.Respuesta" Role="Respuesta" Multiplicity="*" />
+          <End Type="ModeloPEUA.Pregunta" Role="Pregunta" Multiplicity="1" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloPEUAStoreContainer" CdmEntityContainer="ModeloPEUAContainer">
+    <EntitySetMapping Name="Actividad">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Actividad)">
+        <MappingFragment StoreEntitySet="Actividad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CantidadInscritos" ColumnName="CantidadInscritos" />
+          <ScalarProperty Name="CantidadParticipante" ColumnName="CantidadParticipante" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Semestre" ColumnName="Semestre" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="GrupoEnfoque" ColumnName="GrupoEnfoque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carrera">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Carrera)">
+        <MappingFragment StoreEntitySet="Carrera">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Facultad_Id" ColumnName="Facultad_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacto">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Contacto)">
+        <MappingFragment StoreEntitySet="Contacto">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Convenio">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Convenio)">
+        <MappingFragment StoreEntitySet="Convenio">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Numero_Decreto" ColumnName="Numero_Decreto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha_expiracion" ColumnName="Fecha_expiracion" />
+          <ScalarProperty Name="Periocidad" ColumnName="Periocidad" />
+          <ScalarProperty Name="Contacto_Id" ColumnName="Contacto_Id" />
+          <ScalarProperty Name="Organizacion_Id" ColumnName="Organizacion_Id" />
+          <ScalarProperty Name="Carrera_Id" ColumnName="Carrera_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleador">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Empleador)">
+        <MappingFragment StoreEntitySet="Empleador">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Organizacion_Id" ColumnName="Organizacion_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encuesta">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Encuesta)">
+        <MappingFragment StoreEntitySet="Encuesta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facultad">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Facultad)">
+        <MappingFragment StoreEntitySet="Facultad">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Convenio_Id" ColumnName="Convenio_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizacion">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Organizacion)">
+        <MappingFragment StoreEntitySet="Organizacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="SectorEconomico" ColumnName="SectorEconomico" />
+          <ScalarProperty Name="Tamaño" ColumnName="Tamaño" />
+          <ScalarProperty Name="RangoTitulados" ColumnName="RangoTitulados" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Persona)">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fono" ColumnName="Fono" />
+          <ScalarProperty Name="Apellido_Materno" ColumnName="Apellido_Materno" />
+          <ScalarProperty Name="Apellido_Paterno" ColumnName="Apellido_Paterno" />
+          <ScalarProperty Name="Rut" ColumnName="Rut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pregunta">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Pregunta)">
+        <MappingFragment StoreEntitySet="Pregunta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Respuesta">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloPEUA.Respuesta)">
+        <MappingFragment StoreEntitySet="Respuesta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ActividadEmpleador" TypeName="ModeloPEUA.ActividadEmpleador" StoreEntitySet="ActividadEmpleador">
+      <EndProperty Name="Actividad">
+        <ScalarProperty Name="Id" ColumnName="Actividad_Id" />
+      </EndProperty>
+      <EndProperty Name="Empleador">
+        <ScalarProperty Name="Id" ColumnName="Empleador_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ActividadOrganizacion" TypeName="ModeloPEUA.ActividadOrganizacion" StoreEntitySet="ActividadOrganizacion">
+      <EndProperty Name="Actividad">
+        <ScalarProperty Name="Id" ColumnName="Actividad_Id" />
+      </EndProperty>
+      <EndProperty Name="Organizacion">
+        <ScalarProperty Name="Id" ColumnName="Organizacion_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarreraActividad" TypeName="ModeloPEUA.CarreraActividad" StoreEntitySet="CarreraActividad">
+      <EndProperty Name="Actividad">
+        <ScalarProperty Name="Id" ColumnName="Actividad_Id" />
+      </EndProperty>
+      <EndProperty Name="Carrera">
+        <ScalarProperty Name="Id" ColumnName="Carrera_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarreraEmpleador" TypeName="ModeloPEUA.CarreraEmpleador" StoreEntitySet="CarreraEmpleador">
+      <EndProperty Name="Carrera">
+        <ScalarProperty Name="Id" ColumnName="Carrera_Id" />
+      </EndProperty>
+      <EndProperty Name="Empleador">
+        <ScalarProperty Name="Id" ColumnName="Empleador_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmpleadorEncuesta" TypeName="ModeloPEUA.EmpleadorEncuesta" StoreEntitySet="EmpleadorEncuesta">
+      <EndProperty Name="Empleador">
+        <ScalarProperty Name="Id" ColumnName="Empleador_Id" />
+      </EndProperty>
+      <EndProperty Name="Encuesta">
+        <ScalarProperty Name="Id" ColumnName="Encuesta_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EncuestaPregunta" TypeName="ModeloPEUA.EncuestaPregunta" StoreEntitySet="EncuestaPregunta">
+      <EndProperty Name="Encuesta">
+        <ScalarProperty Name="Id" ColumnName="Encuesta_Id" />
+      </EndProperty>
+      <EndProperty Name="Pregunta">
+        <ScalarProperty Name="Id" ColumnName="Pregunta_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RespuestaEmpleador" TypeName="ModeloPEUA.RespuestaEmpleador" StoreEntitySet="Respuesta">
+      <EndProperty Name="Empleador">
+        <ScalarProperty Name="Id" ColumnName="Empleador_Id" />
+      </EndProperty>
+      <EndProperty Name="Respuesta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RespuestaPregunta" TypeName="ModeloPEUA.RespuestaPregunta" StoreEntitySet="Respuesta">
+      <EndProperty Name="Pregunta">
+        <ScalarProperty Name="Id" ColumnName="Pregunta_Id" />
+      </EndProperty>
+      <EndProperty Name="Respuesta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

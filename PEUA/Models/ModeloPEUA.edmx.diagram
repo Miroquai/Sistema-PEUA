@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7549e8ea5ee445b4b42953f155037777" Name="Diagram1" DisplayType="true" ZoomLevel="100" >
+        <EntityTypeShape EntityType="ModeloPEUA.Actividad" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="ModeloPEUA.Carrera" Width="1.5" PointX="9.75" PointY="6.625" />
+        <EntityTypeShape EntityType="ModeloPEUA.Contacto" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="ModeloPEUA.Convenio" Width="1.5" PointX="5.25" PointY="9.5" />
+        <EntityTypeShape EntityType="ModeloPEUA.Empleador" Width="1.5" PointX="5.25" PointY="5.25" />
+        <EntityTypeShape EntityType="ModeloPEUA.Encuesta" Width="1.5" PointX="7.5" PointY="5.875" />
+        <EntityTypeShape EntityType="ModeloPEUA.Facultad" Width="1.5" PointX="7.5" PointY="10.375" />
+        <EntityTypeShape EntityType="ModeloPEUA.Organizacion" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="ModeloPEUA.Persona" Width="1.5" PointX="3" PointY="3" />
+        <AssociationConnector Association="ModeloPEUA.FK_CarreraConvenio" />
+        <AssociationConnector Association="ModeloPEUA.FK_CarreraFacultad" />
+        <AssociationConnector Association="ModeloPEUA.FK_Contacto_inherits_Persona" />
+        <AssociationConnector Association="ModeloPEUA.FK_ContactoConvenio" />
+        <AssociationConnector Association="ModeloPEUA.FK_ConvenioFacultad" />
+        <AssociationConnector Association="ModeloPEUA.FK_ConvenioOrganizacion" />
+        <AssociationConnector Association="ModeloPEUA.FK_Empleador_inherits_Persona" />
+        <AssociationConnector Association="ModeloPEUA.FK_EmpleadorOrganizacion" />
+        <AssociationConnector Association="ModeloPEUA.ActividadEmpleador" />
+        <AssociationConnector Association="ModeloPEUA.ActividadOrganizacion" />
+        <AssociationConnector Association="ModeloPEUA.CarreraActividad" />
+        <AssociationConnector Association="ModeloPEUA.CarreraEmpleador" />
+        <AssociationConnector Association="ModeloPEUA.EmpleadorEncuesta" />
+        <EntityTypeShape EntityType="ModeloPEUA.Pregunta" Width="1.5" PointX="8.75" PointY="3" />
+        <AssociationConnector Association="ModeloPEUA.EncuestaPregunta" />
+        <EntityTypeShape EntityType="ModeloPEUA.Respuesta" Width="1.5" PointX="5.375" PointY="2.375" />
+        <AssociationConnector Association="ModeloPEUA.RespuestaEmpleador" />
+        <AssociationConnector Association="ModeloPEUA.RespuestaPregunta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
